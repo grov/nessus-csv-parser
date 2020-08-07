@@ -42,7 +42,8 @@ def reassemble_file(filepath): # remove " " from path / open original csv / pars
         for row in csv_reader:
             row8=row[8].replace('\n', ' ')
             row9split=row[9].split('\n')
-            output=(f'{row[0]};{row[1]};{row[2]};{row[3]};{row[4]};{row[5]};{row[6]};{row[7]};{row8};{row9split} \n')
+            row10=row[10].replace('\n', ' ')
+            output=(f'{row[0]};{row[1]};{row[2]};{row[3]};{row[4]};{row[5]};{row[6]};{row[7]};{row8};{row9split};{row10} \n')
             newfilename=os.path.splitext(filepath)[0]
             newfilepath=os.path.dirname(filepath)
             f= open(f"{newfilename}_converted.csv","a")
